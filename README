@@ -1,54 +1,60 @@
 Global Superstore SQL Analysis
-This project explores sales performance, profitability, and return-related losses using SQL and the Global Superstore dataset. The analysis focuses on identifying trends across countries, regions, and individual salespeople using structured queries.
+Residential Properties SQL Analysis
+This project uses SQL to analyze residential property data — including sale prices, building characteristics, and location-based trends — to uncover insights about different property types such as Lake Front and Canal Front homes.
 
-Project Objective
-The objective of this project is to extract meaningful insights from a retail dataset using SQL. It covers:
-Identifying high and low performing countries
-Analyzing annual and regional sales trends
-Calculating profitability per unit sold
-Quantifying lost profit from returned items
-Applying advanced SQL concepts like joins, aggregation, and conditional logic
+Objective
+The goal of this analysis is to: 
+Compare sales and property characteristics across housing types
+Analyze trends by location, year, and property type
+Understand how factors like square footage, bedrooms, and location affect sales prices
+Demonstrate SQL proficiency in cleaning, joining, and summarizing relational data
 
-Tools and Technologies
-SQLite 3 (executed via VSCode)
-CSV for data export
-Excel for data inspection and formatting
-Git & GitHub for version control
+Tools & Technologies
+SQL
+CSV data files
+Excel for quick validation
 
-Output File Description
-Annual_Sales_Profit_by_Region_and_Person.csv
-Summarizes annual sales performance by region and individual salesperson. Includes:
-Quantity of sales
-Total sales revenue
-Units sold
-Revenue per unit
-Total profit
-Profit per unit
-Countries_Negative_Profit_or_Margin.csv
-Highlights countries with poor financial performance, based on:
-Negative total profit
-Negative profit per unit
-Lost_Profit_by_Region.csv
-Joins Orders, People, and Returned tables to calculate:
-Number of returned items
-Total profit lost
-Lost profit per item Grouped by region and salesperson.
+Output File Descriptions
+property_type_sales_summary.csv
+Top 10 property types by number of sales, grouped and labeled using codes.
 
-How to Recreate the Analysis
-Open Global_Superstore_Code.sql in VSCode with SQLite 3 installed.
-Run commands in order:
-Create and populate the database from the /data CSV files
-Execute each analysis query from parts F–M
-Export selected outputs using .output commands
-Output CSVs will match those stored in the /output folder for validation.
+property_type_size_summary.csv
+Summary of total square footage and air-conditioned area by property type.
 
-Key Insights
-The U.S. leads in volume but also suffers significant profit loss from returns.
-Some countries consistently show negative profit margins — potential red flags for pricing or logistics.
-Salespeople in certain regions outperform others in profit per unit, revealing opportunities for benchmarking.
+lake_vs_canal_bed_bath_comparison.csv
+Comparison of bedroom and bathroom averages/mins/maxes for Lake vs Canal Front properties.
 
-Future Enhancements
-Automate pipeline using Python (e.g., pandas + sqlite3)
-Visualize results with Tableau or Power BI dashboards
-Add parameterized queries for dynamic filtering (e.g., by region or year)
-Build a Streamlit app for interactive analysis
+property_age_summary.csv
+Average, oldest, and newest build dates for Lake and Canal Front properties as of 2023.
+
+property_price_summary.csv
+Min, max, and average most recent sale prices by property type.
+
+yearly_price_trends_lake_vs_canal.csv
+Price trends between 2013–2018 broken down by year and property type.
+
+price_summary_by_year_city_zip.csv
+Sale price trends over time by city and zip code for Lake and Canal Front properties.
+
+lake_vs_canal_popularity_by_city.csv
+Sales volume comparison for Lake vs Canal Front properties across years and cities.
+
+
+ How to Recreate
+Open ResidentialCode.sql in VSCode (or any SQLite-compatible environment)
+Ensure all CSVs are stored in the /data/ folder and match file paths
+Run each section (Parts B–K) to:
+Create tables
+Import data
+Execute summary queries
+Export CSVs using .mode csv + .output commands
+
+Key Takeaways
+Lake Front properties had slightly higher variability in pricing across regions.
+Canal Front homes tend to be newer but with fewer sales in premium zip codes.
+Zip code and city play a significant role in determining high-value sale clusters.
+
+Potential Future Work
+Visualize trends using Python (Pandas + Matplotlib) or Tableau
+Predict sale prices with regression using property characteristics
+Build an interactive dashboard (Streamlit or Power BI)
